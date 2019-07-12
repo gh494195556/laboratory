@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="index.css" />
+    <title>拖拽元素</title>
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+      }
+
+      .tool-bar {
+        float: left;
+        overflow-y: scroll;
+        resize: horizontal;
+        width: 200px;
+        box-sizing: border-box;
+        height: 100%;
+        border-right: 1px solid #ddd;
+      }
+
+      .tool-bar ul {
+        list-style: none;
+        padding: 0px;
+      }
+
+      .tool-bar ul li {
+        cursor: move;
+        padding: 3px 10px;
+        margin-top: 5px;
+      }
+
+      .tool-bar ul li:active {
+        background-color: #0074e8;
+        color: #fff;
+      }
+
+      .board {
+        height: 100%;
+        box-sizing: border-box;
+        width: calc(100% - 200px);
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tool-bar">
+      <ul>
+        <li draggable="true" code="LABEL">文字</li>
+        <li draggable="true" code="TEXT">文本输入框</li>
+        <li draggable="true" code="DATE">日期输入框</li>
+        <li draggable="true" code="NUMBER">数字输入框</li>
+        <li draggable="true" code="RADIO">单选框</li>
+        <li draggable="true" code="CHECK">多选框</li>
+        <li draggable="true" code="DROP">下拉框</li>
+      </ul>
+    </div>
+    <div class="board"></div>
+    <script>
+      window.onload = () => {
+        const uls = document.getElementsByTagName('ul');
+        uls[0].ondragstart = (e) => {
+          if (e.target.nodeName.toLowerCase() === 'li') {
+            console.log(e.target);
+            console.log(`offsetTop: ${e.target.x} offsetLeft: ${e.target.y}`);
+            console.log(`x: ${e.x} y: ${e.y}`);
+            e.dataTransfer.setData('type', e.target.attributes.code.value);
+          }
+        };
+
+        let board = document.getElementsByClassName('board')[0];
+
+        board.ondragover = (e) => {
+          e.preventDefault();
+        };
+
+        board.ondrop = (e) => {
+          e.preventDefault();
+          const nodeType = e.dataTransfer.getData('type');
+          let containerNode = getNewNode(nodeType);
+          e.target.appendChild(containerNode);
+          containerNode.style.top = e.y + 'px';
+          containerNode.style.left = e.x + 'px';
+        };
+
+        board.ondragstart = (e) => {
+          e.dataTransfer.setData();
+        };
+
+        function getNewNode(type) {
+          let containerNode = document.createElement('div');
+          containerNode.style.width = '100px';
+          containerNode.style.height = '24px';
+          containerNode.style.boxSizing = 'border-box';
+          containerNode.style.position = 'absolute';
+          containerNode.style.cursor = 'move';
+          containerNode.style.borderRadius = '1px';
+          containerNode.draggable = true;
+
+          if (['LABEL', 'RADIO', 'CHECK'].indexOf(type) === -1) {
+            containerNode.style.border = '1px solid #ddd';
+          }
+
+          containerNode.appendChild(getDragNode(type));
+          return containerNode;
+        }
+
+        function getDragNode(type) {
+          switch (type) {
+            case 'LABEL':
+              let span = document.createElement('span');
+              span.innerText = '文字';
+              return span;
+            case 'TEXT':
+              let inputText = document.createElement('input');
+              inputText.type = 'text';
+              inputText.style.boxSizing = 'border-box';
+              inputText.style.borderWidth = '0px';
+              inputText.style.display = 'block';
+              inputText.style.width = '100%';
+              inputText.style.height = '100%';
+              return inputText;
+            case 'DATE':
+              let inputDate = document.createElement('input');
+              inputDate.type = 'date';
+              inputDate.style.boxSizing = 'border-box';
+              inputDate.style.borderWidth = '0px';
+              inputDate.style.display = 'block';
+              inputDate.style.width = '100%';
+              inputDate.style.height = '100%';
+              return inputDate;
+            case 'NUMBER':
+              let inputNumber = document.createElement('input');
+              inputNumber.type = 'number';
+              inputNumber.style.boxSizing = 'border-box';
+              inputNumber.style.borderWidth = '0px';
+              inputNumber.style.display = 'block';
+              inputNumber.style.width = '100%';
+              inputNumber.style.height = '100%';
+              return inputNumber;
+            case 'RADIO':
+              let inputRadio = document.createElement('input');
+              inputRadio.type = 'radio';
+              inputRadio.style.boxSizing = 'border-box';
+              inputRadio.style.borderWidth = '0px';
+              inputRadio.style.display = 'block';
+              inputRadio.style.width = '100%';
+              inputRadio.style.height = '100%';
+              return inputRadio;
+            case 'CHECK':
+              let inputCheck = document.createElement('input');
+              inputCheck.type = 'checkbox';
+              inputCheck.style.boxSizing = 'border-box';
+              inputCheck.style.borderWidth = '0px';
+              inputCheck.style.display = 'block';
+              inputCheck.style.width = '100%';
+              inputCheck.style.height = '100%';
+              return inputCheck;
+            case 'DROP':
+              let select = document.createElement('select');
+              select.style.display = 'block';
+              select.style.boxSizing = 'border-box';
+              select.style.borderWidth = '0px';
+              select.style.width = '100%';
+              select.style.height = '100%';
+              let o1 = document.createElement('option');
+              o1.value = '1';
+              o1.innerText = '1';
+              let o2 = document.createElement('option');
+              o2.value = '2';
+              o2.innerText = '2';
+              select.appendChild(o1);
+              select.appendChild(o2);
+              return select;
+            default:
+              let spanUnkown = document.createElement('span');
+              spanUnkown.innerText = '未知元素';
+              return spanUnkown;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
