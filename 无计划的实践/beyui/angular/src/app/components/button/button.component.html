@@ -1,0 +1,10 @@
+<button [ngClass]="{
+  'bey-button-base': type === undefined,
+  'bey-button-success': type === 'success',
+  'bey-button-danger': type === 'danger',
+  'bey-button-warn': type === 'warn',
+  'bey-button-primary': type === 'primary'
+  }" [ngStyle]="style" [disabled]="disabled" (click)="onClick.emit($event)">
+  <ng-content></ng-content>
+  <span>{{label}}</span>
+</button>

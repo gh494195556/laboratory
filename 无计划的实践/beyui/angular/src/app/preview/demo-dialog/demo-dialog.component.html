@@ -1,0 +1,9 @@
+<div class="container">
+  <b-button (onClick)="showOrHidden()">show/hidden</b-button>
+  <p>hidden: {{hidden}}</p>
+  <b-dialog [(hidden)]="hidden">
+    <span>放置你的内容</span>
+  </b-dialog>
+
+  <markdown [data]="markdown"></markdown>
+</div>

@@ -1,0 +1,16 @@
+<div class="b-dialog" [ngStyle]="{'opacity': opacity, 'z-index': opacity * 100 - 1}">
+  <div class="dialog-form" [ngStyle]="{'height': height}">
+    <div class="form-header">
+      <span class="title">这是一个对话框</span>
+      <span class="close">x</span>
+    </div>
+    <div class="form-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="form-footer">
+      <b-button (onClick)="onOk()" type='success' [style]="{ 'margin-right': '10px'}">确定
+      </b-button>
+      <b-button (onClick)="onNo()" [style]="{ 'margin-right': '10px'}">取消</b-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+.b-dialog {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 0.3s;
+  $form-width: 500px;
+  $form-height: 300px;
+
+  .dialog-form {
+    position: fixed;
+    border-radius: 3px 3px 1px 1px;
+    left: calc(50vw - #{$form-width} / 2);
+    top: calc(50vh - #{$form-height} / 2);
+    border: 1px solid #c8c8c8;
+    width: $form-width;
+    height: $form-height;
+    transition: height 0.3s;
+    box-shadow: 0px 0px 6px -1px #3338;
+
+    $form-header-height: 30px;
+    $form-footer-height: 45px;
+
+    .form-header,
+    .form-footer,
+    .form-body {
+      padding: 0px 15px;
+      width: calc(100% - 30px);
+    }
+
+    .form-header {
+      height: $form-header-height;
+      background-color: #e3e4e6;
+      border-bottom: 1px solid #c8c8c8;
+      padding: 8px 15px 0px 15px;
+
+      .title {
+        color: #333c;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .close {
+        float: right;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #333;
+          color: #fff;
+        }
+      }
+    }
+
+    .form-body {
+      padding: 15px;
+      background-color: #fff;
+      // height: calc(#{$form-height - $form-header-height - $form-footer-height} - 30px);
+      height: calc(100% - (#{$form-header-height + $form-footer-height} + 30px));
+    }
+
+    .form-footer {
+      height: $form-footer-height;
+      padding-top: 5px;
+      text-align: right;
+      border-top: 1px solid #c8c8c8;
+    }
+  }
+}

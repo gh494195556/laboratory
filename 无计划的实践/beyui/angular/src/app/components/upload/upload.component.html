@@ -1,0 +1,13 @@
+<b-button [style]="style" class="fileUploadBtn">
+  <span>{{content}}</span>
+  <input #fileUpload type="file" (change)="onSelectedChange(fileUpload.files)" class="fileUpload" [ngStyle]="style">
+</b-button>
+
+<div>
+  <ul>
+    <li *ngFor="let file of fileUpload.files">
+      <span style="background-color: aquamarine; border-bottom: 1px solid #555;">{{file.name}}</span>
+      <span style="margin-left: 15px; background-color: aquamarine; border-bottom: 1px solid #555;">remove</span>
+    </li>
+  </ul>
+</div>

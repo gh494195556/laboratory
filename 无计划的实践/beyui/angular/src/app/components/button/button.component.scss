@@ -1,0 +1,48 @@
+@import "../../../assets/scss/theme.scss";
+
+@mixin bey-button($main-color, $font-color: #fff) {
+  border: 1px solid #c8c8c8;
+  border-radius: 2px;
+  padding: 3px 10px;
+  color: $font-color;
+  box-shadow: 0px 0px 6px -1px #333d;
+  transition: background-color 0.2s;
+  background-color: $main-color;
+  border-color: $main-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $main-color + 30;
+    border-color: $main-color + 30;
+  }
+
+  &:active {
+    background-color: $main-color - 30;
+    border-color: $main-color - 30;
+  }
+}
+
+$success-color: #0c8484;
+$danger-color: #b52e31;
+$primary-color: $theme-color;
+$warn-color: #ff9b24;
+
+.bey-button-base {
+  @include bey-button(#eee, #555);
+}
+
+.bey-button-success {
+  @include bey-button($success-color);
+}
+
+.bey-button-danger {
+  @include bey-button($danger-color);
+}
+
+.bey-button-warn {
+  @include bey-button($warn-color);
+}
+
+.bey-button-primary {
+  @include bey-button($theme-color);
+}
