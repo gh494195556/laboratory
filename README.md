@@ -67,3 +67,13 @@ vue + bomb
 比较乱，合适时整理一下
 
 ### beyui
+
+#### angular
+
+- 按钮 [done]
+- 文本框 [done]
+- 下拉框 [done]
+- 对话框 [done]
+- 上传 [done]
+
+#### vue
