@@ -13,20 +13,24 @@
 
 #### grunt
 
-1. _01-grunt.md_ Friday, July 12 2019 [done]
+1. _01-grunt.md_ Friday, July 12 2019 `[done]`
 
 #### webpack
 
-1. _01-webpack.md_ Monday, July 15 2019
+1. _01-webpack.md_ Monday, July 15 2019 `[done]`
 
 #### gulp
 
 1. _01-gulp.md_ Tuesday, July 16 2019
 
+#### react
+
+1. _01-react 入门.md_ Wednesday, July 17 2019
+
 #### hybrid app
 
-1. _01-什么是 hybrid app_ Wednesday, July 17 2019
-2. _02-入门级别的一个 hybrid app_ Thursday, July 18 2019
+1. _01-什么是 hybrid app_ Thursday, July 18 2019
+2. _02-入门级别的一个 hybrid app_
 
 ### 复习
 
