@@ -21,7 +21,8 @@
 
 #### gulp
 
-1. _01-gulp.md_ Tuesday, July 16 2019
+1. _01-gulp.md_ Tuesday, July 16 2019 `[done]`
+2. _02-压缩每一个文件夹的 js.md_ Wednesday, July 17 2019 `[done]`
 
 #### react
 
