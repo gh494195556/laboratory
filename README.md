@@ -2,15 +2,33 @@
 
 ## 有计划的实践计划
 
-### 新
+### 学习
 
 - grunt
 - webpack
 - gulp
+- react
 - hybrid app
 - protobuf
 
-### 旧
+#### grunt
+
+1. _01-grunt.md_ Friday, July 12 2019 [done]
+
+#### webpack
+
+1. _01-webpack.md_ Monday, July 15 2019
+
+#### gulp
+
+1. _01-gulp.md_ Tuesday, July 16 2019
+
+#### hybrid app
+
+1. _01-什么是 hybrid app_ Wednesday, July 17 2019
+2. _02-入门级别的一个 hybrid app_ Thursday, July 18 2019
+
+### 复习
 
 - nginx
 - http
@@ -18,28 +36,17 @@
 - css3
 - es6
 
-## 实践日志
-
-### grunt
-
-1. _01-grunt.md_ Friday, July 12 2019 [done]
-
-### webpack
-
-1. _01-webpack.md_ Monday, July 15 2019
-
-### gulp
-
-1. _01-gulp.md_ Tuesday, July 16 2019
-
-### hybrid app
-
-1. _01-什么是 hybrid app_ Wednesday, July 17 2019
-2. _02-入门级别的一个 hybrid app_ Thursday, July 18 2019
-
-### 复习
+#### nginx
 
 1. 新作的电脑，刚好再尝试用 nginx 搭建一个应用 Friday, July 19 2019
+
+#### http
+
+#### html5
+
+#### css3
+
+#### es6
 
 ## 无计划的实践描述
 
