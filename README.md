@@ -26,7 +26,8 @@
 
 #### react
 
-1. _01-react 入门.md_ Wednesday, July 17 2019
+1. _01-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
+2. _02-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
 
 #### hybrid app
 
