@@ -74,6 +74,10 @@ Native View 与 Web View 都是独立的，交替出现，以 Native 为主， W
 
 Web 为主，Native 为辅
 
+**4. 复合型 Hybrid**
+
+复合型 Hybrid 是应用的主体可以是二者的混合，代表框架是 kerkee。
+
 |          | 多 View | 单 View | Web 主体 | 复合型 Hybrid |
 | -------- | ------- | ------- | -------- | ------------- |
 | 应用主体 | Native  | Native  | Web      | Native + web  |
