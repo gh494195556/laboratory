@@ -1,0 +1,16 @@
+.app {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+/* .board {
+  background-color: #333f;
+  position: absolute;
+} */
+
+.row {
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: -4px;
+}

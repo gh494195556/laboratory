@@ -1,0 +1,13 @@
+.square {
+  border: 1px solid #555;
+  height: 30px;
+  width: 30px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  background-color: #fff;
+  /* float: left; */
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+}
