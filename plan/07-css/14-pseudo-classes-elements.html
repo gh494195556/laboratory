@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>14-pseudo-classes/elements</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      a:visited {
+        color: gray;
+      }
+      a:link {
+        color: crimson;
+      }
+      a.new:link {
+        color: crimson;
+        font-size: 30px;
+      }
+      a:hover {
+        color: dodgerblue;
+        font-weight: 700;
+      }
+      a:active {
+        font-size: 20px;
+      }
+      p > b:first-child {
+        color: crimson;
+      }
+      p.before::after {
+        content: url('https://c-ssl.duitang.com/uploads/item/201906/15/20190615151405_pdjhk.jpeg');
+      }
+      q:lang(no) {
+        quotes: '~''~';
+      }
+    </style>
+  </head>
+  <body>
+    <h1>pseudo-class</h1>
+    <a href="https://cn.bing.com">bing</a>
+    <a class="new" href="http://www.google.com">google</a>
+    <a href="http://www.baidu.com">baidu</a>
+    <h1>pseudo-element</h1>
+    <p>hello you, i am looking for you<b>1</b><b>.</b></p>
+    <p>hello you, i am looking for you<b>2</b><b>.</b></p>
+    <p>hello you, i am looking for you<b>3</b><b>.</b></p>
+    <p>hello you, i am looking for you<b>4</b><b>.</b></p>
+    <p>hello you, i am looking for you<b>5</b><b>.</b></p>
+    <q lang="no">quote??</q><q>这是原本的样子</q>
+    <p class="before">
+      CSS - :before 伪元素 ":before" 伪元素可以在元素的内容前面插入新内容。
+      下面的例子在每个元素前面插入一幅图片：
+    </p>
+  </body>
+</html>
