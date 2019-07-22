@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>10-display&visibility</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+      div {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+      }
+
+      div#d1 {
+        background-color: crimson;
+      }
+
+      div#d2 {
+        background-color: dodgerblue;
+      }
+      div#d3 {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <br />
+    <button>none</button>
+    <button>hidden</button>
+    <button>show</button>
+    <script>
+      window.onload = (e) => {
+        const buttons = document.getElementsByTagName('button');
+        buttons[0].addEventListener('click', (e) => {
+          document.getElementById('d1').style.display = 'none';
+        });
+        buttons[1].addEventListener('click', (e) => {
+          document.getElementById('d2').style.visibility = 'hidden';
+        });
+        buttons[2].addEventListener('click', (e) => {
+          document.getElementById('d1').style.display = 'inline-block';
+          document.getElementById('d2').style.visibility = 'visible';
+        });
+      };
+    </script>
+  </body>
+</html>

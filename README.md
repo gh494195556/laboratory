@@ -45,8 +45,8 @@
 
 - nginx
 - http
-- html5
-- css3
+- html
+- css
 - es6
 
 #### nginx

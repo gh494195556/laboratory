@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>04-link</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+      a {
+        /* 去掉下划线 */
+        text-decoration: none;
+      }
+      a:link {
+        /* 未访问呢 */
+        color: #2c2c2c;
+      }
+      a:visited {
+        /* 访问过 */
+        color: crimson;
+      }
+      a:hover {
+        /* 悬浮时 */
+        background-color: skyblue;
+      }
+      a:active {
+        /* 点击时 */
+        color: dodgerblue;
+        font-size: 2em;
+      }
+      ul {
+        border: 1px dashed #c8c8c8;
+        display: inline-block;
+        padding: 15px;
+      }
+      ul > li {
+        color: crimson;
+        line-height: 26px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.baidu.com">baidu</a>
+    <a href="#">link2</a>
+    <p style="margin: 15px 0 0 0">css 书写顺序不能乱：</p>
+    <ul style="margin: 0">
+      <li>:hover 必须在 :link 和 :visited 后面</li>
+      <li>:active 必须在 :hover 后面</li>
+    </ul>
+  </body>
+</html>

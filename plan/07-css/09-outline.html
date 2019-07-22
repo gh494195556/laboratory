@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>09-outline</title>
+    <style type="text/css">
+      * {
+        font-family: sans-serif;
+      }
+      div {
+        margin: 15px;
+        height: 20px;
+      }
+      div.outline {
+        outline-color: crimson;
+        outline-width: thin;
+        outline-style: solid;
+      }
+      button.outline {
+        outline-color: dodgerblue;
+        outline-width: thin;
+        outline-style: solid;
+      }
+      input[type='radio'].outline {
+        outline-color: purple;
+        outline-width: thin;
+        outline-style: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outline"></div>
+    <button class="outline">button</button>
+    <label>girl<input type="radio" class="outline"/></label>
+  </body>
+</html>

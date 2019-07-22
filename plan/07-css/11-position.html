@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>11-position</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      div {
+        position: relative;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+      img.fixed {
+        position: fixed;
+        top: 200px;
+        left: 750px;
+      }
+      img.relative {
+        position: relative;
+        top: 20px;
+        left: 220px;
+      }
+      img.absolute {
+        position: absolute;
+        top: 0px;
+        left: 220px;
+      }
+      img.clip {
+        position: absolute;
+        clip-path: circle(15deg);
+      }
+    </style>
+  </head>
+  <body>
+    <h3>元素定位方式有4种</h3>
+    <ul>
+      <li>Static</li>
+      <li>Fixed</li>
+      <li>Relative</li>
+      <li>Absolute</li>
+    </ul>
+    <p>只有当设置过 position 属性后，top/left/bottom/right 才正常工作</p>
+    <h3>Static</h3>
+    <p>
+      HTML元素的默认值，表示没有定位，出现在正常文档流，此定位
+      top/left/bottom/right 不可用
+    </p>
+    <h3>Fixed</h3>
+    <p>相对浏览器窗口定位，不会受到滚动的影响，与文档流无关，会产生元素重叠</p>
+    <img class="fixed" style="z-index: 999" alt="fixed position image" />
+    <img
+      class="fixed"
+      src="https://c-ssl.duitang.com/uploads/item/201902/05/20190205115527_nmpmg.thumb.700_0.jpg"
+      title="fixed image"
+    />
+    <h3>Relative</h3>
+    <p>Relative 相对于 Static 定位</p>
+    <img
+      src="https://c-ssl.duitang.com/uploads/item/201904/22/20190422201308_GKXxT.thumb.700_0.jpeg"
+      class="relative"
+      title="relative image"
+    />
+    <h3>Absolute</h3>
+    <p>
+      Absolute 相对于最近的一个
+      <b>已定位</b> 的父元素，如果所有父级元素都没有定位，则相对 &lt;html&gt;
+      元素定位
+    </p>
+    <div>
+      <img
+        src="https://c-ssl.duitang.com/uploads/item/201907/17/20190717164614_WW2eA.thumb.700_0.gif"
+        class="absolute"
+        title="absolute image"
+      />
+    </div>
+    <p>Absolute 定位后不占据文档流的位置</p>
+    <p>因此，会产生重叠</p>
+    <br /><br /><br /><br />
+    <h3>z-index</h3>
+    <p>z-index 可以设置重叠元素的层级，值越大，层级越高，越优先显示。</p>
+    <h3>absolute.clip</h3>
+    <p>absolute定位的元素可以 clip</p>
+    <div>
+      <img
+        class="clip"
+        src="https://c-ssl.duitang.com/uploads/item/201906/28/20190628000218_kc5xY.thumb.700_0.jpeg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
