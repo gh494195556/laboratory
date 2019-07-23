@@ -46,6 +46,27 @@ div, #red{/* 1 + 100 */} > div, .blue{/* 1 + 10 */}
 font-family: sans-serif;
 ```
 
+## div 获取焦点问题
+
+div 默认无法获取焦点，设置 tabindex="0" 可以允许 div 获取焦点
+
+## 属性选择器
+
+```
+[c-btn] {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+[c-btn='primary'] {
+  border-color: crimson;
+  background-color: crimson;
+  color: #fff;
+}
+//...
+<button c-btn>按钮</button><span>c-btn</span>
+<button c-btn="primary">主要按钮</button><span>c-btn="primary"</span>
+```
+
 ## 元素显示角色
 
 display 用于设置元素的显示角色，默认为 inline。
