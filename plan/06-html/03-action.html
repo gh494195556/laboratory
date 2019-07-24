@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>03-action</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="userName"></h1>
+      <p id="gender"></p>
+      <p id="city"></p>
+      <p id="skill"></p>
+    </div>
+
+    <script>
+      window.onload = (e) => {
+        const qs = getQueryString();
+
+        fillParams(qs);
+
+        function fillParams(qs) {
+          const keys = Object.keys(qs);
+          console.log(keys);
+          for (const iterator of keys) {
+            let element = document.querySelector(`#${iterator}`);
+            if (element) {
+              element.textContent = qs[iterator];
+            }
+          }
+        }
+
+        function getQueryString() {
+          const queryString = location.search.slice(1);
+          const qsArray = queryString.split('&');
+          console.log(qsArray);
+          let obj = {};
+          for (const iterator of qsArray) {
+            const [k, v] = iterator.split('=');
+            console.log(obj[k]);
+            if (obj[k] === undefined || obj[k] === '') {
+              obj[k] = decodeURI(v);
+            } else {
+              obj[k] = `${obj[k]},${decodeURI(v)}`;
+            }
+          }
+          return obj;
+        }
+      };
+    </script>
+  </body>
+</html>
