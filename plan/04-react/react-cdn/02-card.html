@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>card</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      div.container {
+        position: relative;
+      }
+      div.card {
+        float: left;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        border: 1px solid #dcdcdc;
+        border-radius: 1px;
+        margin: 10px;
+      }
+      div.card > img {
+        width: 190px;
+        margin: 5px;
+      }
+      div.card > p {
+        margin: 5px;
+      }
+
+      div.comment {
+        border-top: 1px solid #dcdcdc;
+        width: 90%;
+      }
+      div.comment > div.left {
+        display: inline-block;
+        width: 20%;
+      }
+      div.comment > div.right {
+        display: inline-block;
+        width: 78%;
+      }
+      div.comment > div > img {
+        margin: 8px 5px;
+        border-radius: 15px;
+        width: 20px;
+        height: 20px;
+      }
+
+      div.comment > div > p {
+        display: block;
+        line-height: 10px;
+      }
+      div.comment > div > p.comment {
+        color: #999;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        const imgList = [
+          {
+            url:
+              'https://a-ssl.duitang.com/uploads/item/201905/08/20190508202050_iecsU.thumb.700_0.jpeg',
+            content: '你奏凯！！！！！！',
+            comment: [
+              {
+                avator:
+                  'https://c-ssl.duitang.com/uploads/item/201906/17/20190617103524_yxzwV.thumb.700_0.jpeg',
+                user: '毛九',
+                content: '好萌！！！！'
+              },
+              {
+                avator:
+                  'https://c-ssl.duitang.com/uploads/item/201906/17/20190617103609_5NYHG.thumb.700_0.jpeg',
+                user: '好鸭好鸭',
+                content: '好可爱！！！！'
+              }
+            ]
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201905/15/20190515232319_XSmQS.thumb.700_0.jpeg',
+            content: '不敢看...',
+            comment: []
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201901/30/20190130052011_npvqd.thumb.700_0.jpeg',
+            content: '小龙妈',
+            comment: []
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201906/13/20190613194116_lliqi.thumb.700_0.jpeg',
+            content: '帅的一批',
+            comment: []
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201906/13/20190613194212_mdfmx.thumb.700_0.jpeg',
+            content: 'sunshine',
+            comment: [
+              {
+                avator:
+                  'https://c-ssl.duitang.com/uploads/item/201907/15/20190715222710_cuzxl.thumb.700_0.jpg',
+                user: '织世',
+                content: '收集到  我和星河都甘做你的陪衬'
+              },
+              {
+                avator:
+                  'https://c-ssl.duitang.com/uploads/item/201907/10/20190710215420_ljdzi.thumb.700_0.jpeg',
+                user: '远远',
+                content: '阳光美丽'
+              }
+            ]
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201906/27/20190627190022_KNGi3.thumb.700_0.jpeg',
+            content: '动漫头像٩(˃̶͈̀௰˂̶͈́)و小鹿搬运',
+            comment: []
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201905/12/20190512193253_vHKLu.thumb.700_0.jpeg',
+            content: 'GALeeの自截',
+            comment: []
+          },
+          {
+            url:
+              'https://c-ssl.duitang.com/uploads/item/201906/17/20190617103603_kLaci.thumb.700_0.jpeg',
+            content: '动漫头像',
+            comment: [
+              {
+                avator:
+                  'https://c-ssl.duitang.com/uploads/item/201906/07/20190607162548_bvlif.thumb.700_0.jpg',
+                user: '我怎么会这么帅',
+                content: '已收藏'
+              }
+            ]
+          }
+        ];
+
+        const cardList = imgList.map((v, x) => {
+          const comments = v.comment.map((m, y) => {
+            return (
+              <Comment
+                avator={m.avator}
+                user={m.user}
+                comment={m.content}
+                key={y}
+              />
+            );
+          });
+          return (
+            <div className='container'>
+              <Card url={v.url} content={v.content} key={x}>
+                {comments}
+              </Card>
+            </div>
+          );
+        });
+
+        ReactDOM.render(cardList, app);
+
+        function Card(props) {
+          return (
+            <div className='card'>
+              <img src={props.url} /> <p>{props.content}</p>
+              {props.children}
+            </div>
+          );
+        }
+
+        function Comment(props) {
+          return (
+            <div className='comment'>
+              <div className='left'>
+                <img src={props.avator} />
+              </div>
+              <div className='right'>
+                <p>{props.user}</p>
+                <p className='comment'>{props.comment}</p>
+              </div>
+            </div>
+          );
+        }
+      };
+    </script>
+  </body>
+</html>
