@@ -60,10 +60,10 @@
 1. _00-react-cdn.md_ Tuesday, July 24 2019 `[done]`
 2. _01-react-helloworld.html_ Tuesday, July 24 2019 `[done]`
 3. _00-react-card.html_ Tuesday, July 24 2019 `[done]`
-4. _02-jsx.html_ Wednesday, July 24 2019 `[done]`
-5. _03-元素渲染.html_ Wednesday, July 24 2019 `[done]`
-6. _04-组件与 props.html_ Wednesday, July 24 2019 `[done]`
-7. _05-state 与生命周期.html_
+4. _02-jsx.html_ Thursday, July 25 2019 `[done]`
+5. _03-元素渲染.html_ Thursday, July 25 2019 `[done]`
+6. _04-组件与 props.html_ Thursday, July 25 2019 `[done]`
+7. _05-state 与生命周期.html_ Thursday July 25 2019 `[done]`
 8. _06-事件处理.html_
 9. _07-条件渲染.html_
 10. _08-列表与 key.html_
@@ -75,6 +75,8 @@
 ## 3. 单页应用(Single-Page Application, SPA)
 
 ### a. vue
+
+1. _01-vuex-oidc_
 
 ### b. react
 
@@ -111,12 +113,18 @@
 
 ## 6. Node.Js
 
-### a. express
+### a. 《深入浅出 Nodejs》
 
-### b. koa
+### b. express
+
+### c. koa
 
 ## 7. 通用技能
 
 ### a. lodash
 
 ### b. rxjs
+
+### c. 《学习 JavaScript 数据结构与算法》
+
+### d. 《算法图解》
