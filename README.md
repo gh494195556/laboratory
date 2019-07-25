@@ -1,34 +1,69 @@
 # 我的实验室
 
-## 有计划的实践计划
+## 目录
 
-### 学习
+> 1. 自动化工具
+>    1. grunt
+>    2. gulp
+>    3. webpack
+> 2. 多页应用
+>    1. html+css+js
+>    2. jquery
+>    3. vue
+>    4. react
+> 3. 单页应用
+>    1. vue
+>    2. react
+>    3. angular
+> 4. 混合应用
+>    1. weex
+>    2. react native
+> 5. ESMAScript
+>    1. es5
+>    2. es2015
+>    3. es2016
+>    4. es2017
+>    5. es2018
+>    6. es2019
+> 6. Node.Js
+>    1. express
+>    2. koa
+> 7. 通用技能
+>    1. lodash
+>    2. rxjs
 
-- grunt [give up]
-- webpack
-- gulp
-- react
-- hybrid app
-  - react native
-  - veex
-    - vue.js
-    - rax.js(react)
-- protobuf
+## 1. 自动化工具
 
-#### grunt
+### 1. grunt
 
 1. _01-grunt.md_ Friday, July 12 2019 `[done]`
 
-#### webpack
-
-1. _01-webpack.md_ Monday, July 15 2019 `[done]`
-
-#### gulp
+### 2. gulp
 
 1. _01-gulp.md_ Tuesday, July 16 2019 `[done]`
 2. _02-压缩每一个文件夹的 js.md_ Wednesday, July 17 2019 `[done]`
 
-#### react
+### 3. webpack
+
+1. _01-webpack.md_ Monday, July 15 2019 `[done]`
+
+## 2. 多页应用(Multi-Page Application, MPA)
+
+### 1. html+css+js
+
+### 2. jquery
+
+### 3. vue
+
+### 4. react
+
+1. _00-react-cdn.md_ Tuesday, July 24 2019 `[done]`
+
+## 3. 单页应用(Single-Page Application, SPA)
+
+### 1. vue
+
+### 2. react
 
 1. _01-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
 2. _02-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
@@ -36,69 +71,39 @@
 4. _04-react 入门教程系列.md_ Saturday, July 19 2019 `[done]`
 5. _05-react 入门教程系列.md_ Saturday, July 19 2019 `[done]`
 
-#### hybrid app
+### 3. angular
+
+## 4. 混合应用(Hybrid Application)
 
 1. _01-什么是 hybrid app_ Thursday, July 18 2019
 2. _02-入门级别的一个 hybrid app_
 
-### 复习
+### 1. weex
 
-- nginx
-- http
-- html
-- css
-- es6
+### 2. react native
 
-#### nginx
+## 5. ESMAScript
 
-1. 新作的电脑，刚好再尝试用 nginx 搭建一个应用 Friday, July 19 2019
+### 1. es5
 
-#### http
+### 2. es2015
 
-#### html
+### 3. es2016
 
-#### css
+### 4. es2017
 
-> 1. css 基础 `[done]`
-> 2. css 响应式布局
+### 5. es2018
 
-#### es6
+### 6. es2019
 
-## 无计划的实践描述
+## 6. Node.Js
 
-### 拖拽元素
+### 1. express
 
-- 左侧工具面板
-  - 支持拖拽 [done]
-- 中间主面板
-  - 支持拖放 [done]
-- 右侧属性面板
-  - 支持修改中间面板元素的属性
+### 2. koa
 
-### 博客
+## 7. 通用技能
 
-vue + bomb
+### 1. lodash
 
-- 可注册 [done]
-  - 注册完成后有 bug, 无法正常跳转登录状态，不过手动返回登录页面后可成功登录
-- 可登录 [done]
-- 可提交博客 [done]
-- 可查询博客
-
-### es6
-
-比较乱，合适时整理一下
-
-### beyui
-
-#### angular
-
-- 按钮 [done]
-- 文本框 [done]
-- 下拉框 [done]
-- 对话框 [done]
-- 上传 [done]
-
-#### vue
-
-## 备忘
+### 2. rxjs
