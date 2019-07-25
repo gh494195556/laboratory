@@ -3,8 +3,8 @@
 > 目录
 >
 > 1. CDN 3 个
-> 2. React CDN Hello World
-> 3. React CDN 卡片组件
+> 2. Hello World
+> 3. 卡片组件
 
 ## CDN
 
@@ -17,7 +17,7 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
-## React
+## Hello World
 
 与其他框架类似， React 也需要一个入口点，例如 `div#app` 如此。
 
@@ -63,7 +63,7 @@
 </html>
 ```
 
-## React 卡片组件
+## 卡片组件
 
 CDN 的方式使用 React 编写组件，模仿 **堆糖(还差得远呢)**:
 
