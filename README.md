@@ -34,36 +34,36 @@
 
 ## 1. 自动化工具
 
-### 1. grunt
+### a. grunt
 
 1. _01-grunt.md_ Friday, July 12 2019 `[done]`
 
-### 2. gulp
+### b. gulp
 
 1. _01-gulp.md_ Tuesday, July 16 2019 `[done]`
 2. _02-压缩每一个文件夹的 js.md_ Wednesday, July 17 2019 `[done]`
 
-### 3. webpack
+### c. webpack
 
 1. _01-webpack.md_ Monday, July 15 2019 `[done]`
 
 ## 2. 多页应用(Multi-Page Application, MPA)
 
-### 1. html+css+js
+### a. html+css+js
 
-### 2. jquery
+### b. jquery
 
-### 3. vue
+### c. vue
 
-### 4. react
+### d. react
 
 1. _00-react-cdn.md_ Tuesday, July 24 2019 `[done]`
 
 ## 3. 单页应用(Single-Page Application, SPA)
 
-### 1. vue
+### a. vue
 
-### 2. react
+### b. react
 
 1. _01-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
 2. _02-react 入门教程系列.md_ Wednesday, July 17 2019 `[done]`
@@ -71,39 +71,39 @@
 4. _04-react 入门教程系列.md_ Saturday, July 19 2019 `[done]`
 5. _05-react 入门教程系列.md_ Saturday, July 19 2019 `[done]`
 
-### 3. angular
+### c. angular
 
 ## 4. 混合应用(Hybrid Application)
 
 1. _01-什么是 hybrid app_ Thursday, July 18 2019
 2. _02-入门级别的一个 hybrid app_
 
-### 1. weex
+### a. weex
 
-### 2. react native
+### b. react native
 
 ## 5. ESMAScript
 
-### 1. es5
+### a. es5
 
-### 2. es2015
+### b. es2015
 
-### 3. es2016
+### c. es2016
 
-### 4. es2017
+### d. es2017
 
-### 5. es2018
+### e. es2018
 
-### 6. es2019
+### f. es2019
 
 ## 6. Node.Js
 
-### 1. express
+### a. express
 
-### 2. koa
+### b. koa
 
 ## 7. 通用技能
 
-### 1. lodash
+### a. lodash
 
-### 2. rxjs
+### b. rxjs
