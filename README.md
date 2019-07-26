@@ -18,7 +18,7 @@
 > 4. 混合应用
 >    1. weex
 >    2. react native
-> 5. ESMAScript
+> 5. ECMAScript
 >    1. es5
 >    2. es2015
 >    3. es2016
