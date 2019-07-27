@@ -18,27 +18,7 @@ export default {
   mounted() {
     this.oidcSignInCallback()
       .then(redirectPath => {
-        if (this.oidcUser.sub === TOOLONG) {
-          const url = `http://192.168.1.67:10000/Account/GetPermission/${this.oidcUser.idp
-            .toString()
-            .trim()}`;
-          this.axios.get(url).then(res => {
-            /**
-             * DepartmentList:[]
-             * GroupList:[]
-             * ModulePathList:[]
-             * ScopeList:[]
-             * User:{}
-             * ValidRoleList:[]
-             */
-            let {
-              Note: department,
-              Name: name,
-              UserId: userId
-            } = res.data.User;
-            console.log(department.trim(), name.trim(), userId.trim());
-          });
-        }
+        console.log(this.oidcUser);
         this.$router.push(redirectPath);
       })
       .catch(err => {
