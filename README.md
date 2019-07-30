@@ -31,6 +31,10 @@
 > 7. 通用技能
 >    1. lodash
 >    2. rxjs
+>    3. 《学习 JavaScript 数据结构与算法》
+>    4. 《算法图解》
+>    5. 《现代前端技术解析》
+>    6. 《前端架构从入门到微前端》
 
 ## 1. 自动化工具
 
@@ -45,7 +49,9 @@
 
 ### c. webpack
 
-1. _01-webpack.md_ Monday, July 15 2019 `[done]`
+1. _01-webpack 简介.md_ Monday, July 15 2019 `[done]`
+2. _02-入口起点.md_ Tuesday, July 30 2019 `[done]`
+3. _03-输出.md_ Tuesday, July 30 2019 `[done]`
 
 ## 2. 多页应用(Multi-Page Application, MPA)
 
@@ -76,7 +82,7 @@
 
 ### a. vue
 
-1. _01-vuex-oidc_
+1. _01-vuex-oidc.md_ Friday, July 26 2019 `[done]`
 
 ### b. react
 
@@ -131,6 +137,7 @@
 
 ### e. 《现代前端技术解析》
 
-1. _web 前端技术基础.md_
+1. _01-前端技术基础.md_ Tuesday, July 30 2019 `[done]`
+2. _02-前端与协议.md_
 
 ### f. 《前端架构从入门到微前端》
