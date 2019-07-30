@@ -214,5 +214,46 @@ CacheStorage 时在 ServiceWorker 规范中定义的，可用于保存每个 Ser
 
 目前应用较少，他主要基于网页端 Flash。
 
-###总结
+**提示**
 目前可以在项目中配置应用的只有 HTTP 缓存、localStorage、Cookie。ServiceWorker 将来可能被使用，目前兼容性欠缺。
+
+## 前端高效开发技术
+
+### 开发工具
+
+- sublime
+- webstorm
+- vscode
+
+高效开发工具应具备的能力：
+
+- format
+- snippet
+- lint
+- keyboard shortcuts
+- debug
+- git/svn
+- 自动生成代码文档工具
+
+### 调试工具
+
+**前端快速调试工具 Chrome 浏览器**
+
+在 Chrome 地址栏输入 chrome://settings/ 查看设置，也可以输入 chrome://chrome-urls/ 查看 URLs 列表。
+
+请求工具 postman、hostAdmin
+
+### 网络辅助工具
+
+**Fiddler**
+其基本原理是作为本地的一个代理服务器，将特定的应用层网络请求拦截，来模拟需要的不同场景。
+
+### Node 调试工具
+
+相关工具：**node-supervisor**、**node-inspector**。
+
+### 前端远程调试工具
+
+前端远程调试工具的原理和使用方式跟 node-inspect 类似，需要启动一个调试代理服务将远程设备上的代码发送到开发机器的模拟浏览器上逐行执行，同时开发机模拟浏览器上的操作也要回馈给远程设备。
+
+相关工具：**vorlon.js**、**weinre**。
