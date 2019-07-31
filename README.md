@@ -67,16 +67,16 @@
 2. _01-react-helloworld.html_ Tuesday, July 24 2019 `[done]`
 3. _00-react-card.html_ Tuesday, July 24 2019 `[done]`
 4. _02-jsx.html_ Thursday, July 25 2019 `[done]`
-5. _03-元素渲染.html_ Thursday, July 25 2019 `[done]`
-6. _04-组件与 props.html_ Thursday, July 25 2019 `[done]`
-7. _05-state 与生命周期.html_ Thursday July 25 2019 `[done]`
-8. _06-事件处理.html_
-9. _07-条件渲染.html_
-10. _08-列表与 key.html_
-11. _09-表单.html_
-12. _10-状态提升.html_
-13. _11-组件与继承.html_
-14. _12-react 哲学.html_
+5. _03-元素渲染_ Thursday, July 25 2019 `[done]`
+6. _04-组件与 props_ Thursday, July 25 2019 `[done]`
+7. _05-state 与生命周期_ Thursday July 25 2019 `[done]`
+8. _06-事件处理_ Thursday July 31 2019 `[done]`
+9. _07-条件渲染_ Thursday July 31 2019 `[done]`
+10. _08-列表与 key_
+11. _09-表单_
+12. _10-状态提升_
+13. _11-组件与继承_
+14. _12-react 哲学_
 
 ## 3. 单页应用(Single-Page Application, SPA)
 

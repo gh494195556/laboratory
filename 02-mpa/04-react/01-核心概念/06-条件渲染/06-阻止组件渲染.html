@@ -24,14 +24,13 @@
       window.onload = (e) => {
         const app = document.querySelector('#app');
         function Demo(props) {
-          if (props.visible) {
+          if (props.visible === 'true') {
             return <h1>Demo Component.</h1>;
           } else {
             return null;
           }
         }
-        let demo = <Demo visible='true' />;
-        ReactDOM.render(demo, app);
+        ReactDOM.render(<Demo visible='true' />, app);
       };
     </script>
   </body>
