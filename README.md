@@ -75,8 +75,8 @@
 10. _07-列表与 key_ Wednesday July 31 2019 `[done]`
 11. _08-表单_ Thursday August 01 2019 `[done]`
 12. _09-状态提升_ Thursday August 01 2019 `[done]`
-13. _10-组合与继承_
-14. _11-react 哲学_
+13. _10-组合与继承_ Thursday August 01 2019 `[done]`
+14. _11-react 哲学.html_ Thursday Augusst 01 2019 `[done]`
 
 ## 3. 单页应用(Single-Page Application, SPA)
 

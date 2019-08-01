@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>React哲学</title>
+    <style>
+      html {
+        padding: 15px;
+        font-family: sans-serif;
+      }
+
+      div.container {
+        display: inline-block;
+        border: 1px dashed #c8c8c8;
+        padding: 10px;
+        background-color: #fafafa;
+      }
+      div.container > h1 {
+        margin: 5px 0;
+      }
+      b.category {
+        font-size: 16px;
+        display: inline-block;
+        line-height: 30px;
+      }
+      b.th {
+        box-sizing: border-box;
+        margin: 10px 0;
+        padding: 5px 10px;
+        display: inline-block;
+        width: 50%;
+        background-color: #369;
+        color: #fff;
+      }
+      div.row {
+        height: 26px;
+      }
+      div.row > span.name,
+      div.row > span.price {
+        display: inline-block;
+        width: 110px;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        const data = [
+          {
+            category: 'Sporting Goods',
+            price: '$49.99',
+            stocked: true,
+            name: 'Football'
+          },
+          {
+            category: 'Sporting Goods',
+            price: '$9.99',
+            stocked: true,
+            name: 'Baseball'
+          },
+          {
+            category: 'Sporting Goods',
+            price: '$29.99',
+            stocked: false,
+            name: 'Basketball'
+          },
+          {
+            category: 'Electronics',
+            price: '$99.99',
+            stocked: true,
+            name: 'iPod Touch'
+          },
+          {
+            category: 'Electronics',
+            price: '$399.99',
+            stocked: false,
+            name: 'iPhone 5'
+          },
+          {
+            category: 'Electronics',
+            price: '$199.99',
+            stocked: true,
+            name: 'Nexus 7'
+          }
+        ];
+
+        class FilterableProductTable extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { datasoruce: data, queryString: '', stock: false };
+          }
+
+          handleChange(name, value) {
+            this.setState({
+              [name]: value
+            });
+          }
+
+          render() {
+            let ds = this.state.datasoruce.filter(
+              (d) =>
+                d.name
+                  .toLowerCase()
+                  .includes(this.state.queryString.toLowerCase()) &&
+                (d.stocked === this.state.stock || !this.state.stock)
+            );
+            return (
+              <div className='container'>
+                <h1>GOODS LIST</h1>
+                <SearchBar
+                  stock={this.state.stock}
+                  queryString={this.state.queryString}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <ProductTable datasoruce={ds} />
+              </div>
+            );
+          }
+        }
+        class SearchBar extends React.Component {
+          constructor(props) {
+            super(props);
+          }
+
+          handleChange(e) {
+            const value =
+              e.target.name === 'stock' ? e.target.checked : e.target.value;
+            this.props.onChange(e.target.name, value);
+          }
+
+          render() {
+            return (
+              <div>
+                <input
+                  name='queryString'
+                  type='text'
+                  value={this.props.queryString}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <label>
+                  <input
+                    name='stock'
+                    type='checkbox'
+                    value={this.props.stock}
+                    onChange={this.handleChange.bind(this)}
+                  />
+                  仅看有库存
+                </label>
+              </div>
+            );
+          }
+        }
+        class ProductTable extends React.Component {
+          constructor(props) {
+            super(props);
+          }
+
+          render() {
+            const category = new Set(
+              this.props.datasoruce.map((v) => v.category)
+            );
+
+            let categoryArray = [];
+            for (const iterator of category) {
+              categoryArray.push(iterator);
+            }
+
+            const table = categoryArray.map((v, i) => {
+              return (
+                <div key={i}>
+                  <ProductCategoryRow category={v} />
+                  {this.props.datasoruce
+                    .filter((f) => f.category === v)
+                    .map((p, index) => (
+                      <ProductRow name={p.name} price={p.price} key={index} />
+                    ))}
+                </div>
+              );
+            });
+
+            return (
+              <div>
+                <div>
+                  <b className='th'>Name</b>
+                  <b className='th'>Price</b>
+                </div>
+                {table}
+              </div>
+            );
+          }
+        }
+        class ProductCategoryRow extends React.Component {
+          constructor(props) {
+            super(props);
+          }
+
+          render() {
+            return <b className='category'>{this.props.category}</b>;
+          }
+        }
+        class ProductRow extends React.Component {
+          constructor(props) {
+            super(props);
+          }
+
+          render() {
+            return (
+              <div className='row'>
+                <span className='name'>{this.props.name}</span>
+                <span className='price'>{this.props.price}</span>
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(<FilterableProductTable />, app);
+      };
+    </script>
+  </body>
+</html>
