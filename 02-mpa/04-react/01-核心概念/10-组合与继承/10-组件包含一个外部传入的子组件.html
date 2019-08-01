@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>10-组件包含一个外部传入的子组件</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      div.dialog {
+        float: left;
+        margin: 15px;
+        position: relative;
+        border: 1px solid #999;
+        border-radius: 1px;
+        padding: 15px;
+        height: 300px;
+        width: 256px;
+      }
+      div.dialog > h1 {
+        position: relative;
+        top: 20px;
+      }
+      div.dialog > img {
+        border-radius: 50%;
+        position: absolute;
+        width: 80px;
+        right: 20px;
+        top: 40px;
+      }
+      div.dialog > div.content {
+        box-sizing: border-box;
+        bottom: 15px;
+        position: absolute;
+        padding: 10px;
+        width: calc(100% - 30px);
+        height: 180px;
+        border-radius: 3px;
+        background-color: #c8c8c8;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        function Dialog(props) {
+          return (
+            <div className='dialog'>
+              <h1>{props.title}</h1>
+              <img src={props.url} />
+              <div className='content'>{props.children}</div>
+            </div>
+          );
+        }
+
+        const twoDialog = (
+          <div>
+            <Dialog
+              title='妮可妮可妮'
+              url='https://c-ssl.duitang.com/uploads/item/201906/19/20190619201326_ldzls.thumb.700_0.jpg'
+            >
+              <h3>niconiconi</h3>
+              <p>别问，点赞就行！</p>
+            </Dialog>
+            <Dialog
+              title='死亡凝视'
+              url='https://c-ssl.duitang.com/uploads/item/201906/11/20190611074303_msnZQ.thumb.700_0.jpeg'
+            >
+              <ul>
+                <li>喵</li>
+                <li>喵喵</li>
+                <li>喵喵喵</li>
+              </ul>
+            </Dialog>
+          </div>
+        );
+
+        ReactDOM.render(twoDialog, app);
+      };
+    </script>
+  </body>
+</html>
