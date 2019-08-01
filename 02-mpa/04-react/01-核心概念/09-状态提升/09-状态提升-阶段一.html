@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>09-状态提升-阶段一</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      div.img {
+        float: left;
+        padding: 10px;
+      }
+      div.img > img {
+        width: 200px;
+        border-radius: 5px;
+      }
+      div.app {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <img
+        src="https://c-ssl.duitang.com/uploads/item/201704/25/20170425124133_2rwst.thumb.700_0.jpeg"
+      />
+    </div>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        // 1. BoilingVerdict
+        // 根据给定的温度(props.celsius)显示是否沸腾
+        function BoilingVerdict(props) {
+          if (props.celsius >= 100) {
+            return <p>The water would boil.</p>;
+          }
+          return <p>The water would not boil.</p>;
+        }
+
+        // 2. Calculator
+        // 接收输入一个温度，根据温度渲染 BoilingVerdict
+        class Calculator extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { temperature: '' };
+          }
+
+          handleChange(e) {
+            this.setState({ temperature: e.target.value });
+          }
+
+          render() {
+            const temperature = this.state.temperature;
+            return (
+              <fieldset style={{ borderRadius: '3px' }}>
+                <legend>Enter temperature in Celsius</legend>
+                <input
+                  value={temperature}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <BoilingVerdict celsius={parseFloat(temperature)} />
+              </fieldset>
+            );
+          }
+        }
+
+        ReactDOM.render(<Calculator />, app);
+      };
+    </script>
+  </body>
+</html>

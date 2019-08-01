@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>09-状态提升-阶段二</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      div.img {
+        float: left;
+        padding: 6px;
+      }
+      div.img > img {
+        width: 200px;
+        border-radius: 5px;
+      }
+      div.app {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <img
+        src="https://c-ssl.duitang.com/uploads/item/201704/25/20170425124133_2rwst.thumb.700_0.jpeg"
+      />
+    </div>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        function BoilingVerdict(props) {
+          if (props.celsius >= 100) {
+            return <h1>翻滚吧，自来水！</h1>;
+          }
+          return <h1>这个温度没办法沸腾哦。</h1>;
+        }
+
+        const scaleNames = {
+          c: '摄氏度',
+          f: '华氏度'
+        };
+
+        // 1. 修改 TemperatureInput 组件，将 state 提出
+        class TemperatureInput extends React.Component {
+          constructor(props) {
+            super(props);
+          }
+
+          handleChange(e) {
+            this.props.onTemperatureChange(e.target.value);
+          }
+
+          render() {
+            const temperature = this.props.temperature;
+            const scale = this.props.scale;
+            return (
+              <fieldset style={{ borderRadius: '3px' }}>
+                <legend>输入 {scaleNames[scale]}:</legend>
+                <input
+                  value={temperature}
+                  onChange={this.handleChange.bind(this)}
+                />
+              </fieldset>
+            );
+          }
+        }
+
+        // 2. 修改 Calculator 组件，添加 state 管理
+        class Calculator extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { temperature: '', scale: 'c' };
+          }
+
+          handleCelsiusChange(temperature) {
+            this.setState({ scale: 'c', temperature });
+          }
+
+          handleFahrenheitChange(temperature) {
+            this.setState({ scale: 'f', temperature });
+          }
+
+          render() {
+            const scale = this.state.scale;
+            const temperature = this.state.temperature;
+            const celsius =
+              scale === 'f' ? tryConvert(temperature, toCelsius) : temperature;
+            const fahrenheit =
+              scale === 'c'
+                ? tryConvert(temperature, toFahrenheit)
+                : temperature;
+
+            return (
+              <div>
+                <TemperatureInput
+                  scale='c'
+                  temperature={celsius}
+                  onTemperatureChange={this.handleCelsiusChange.bind(this)}
+                />
+                <TemperatureInput
+                  scale='f'
+                  temperature={fahrenheit}
+                  onTemperatureChange={this.handleFahrenheitChange.bind(this)}
+                />
+                <BoilingVerdict celsius={parseFloat(celsius)} />
+              </div>
+            );
+          }
+        }
+
+        function toCelsius(fahrenheit) {
+          return ((fahrenheit - 32) * 5) / 9;
+        }
+
+        function toFahrenheit(celsius) {
+          return (celsius * 9) / 5 + 32;
+        }
+
+        function tryConvert(temperature, convert) {
+          const input = parseFloat(temperature);
+          if (Number.isNaN(input)) {
+            return '';
+          }
+          const output = convert(input);
+          const rounded = Math.round(output * 1000) / 1000;
+          return rounded.toString();
+        }
+
+        ReactDOM.render(<Calculator />, app);
+      };
+    </script>
+  </body>
+</html>
