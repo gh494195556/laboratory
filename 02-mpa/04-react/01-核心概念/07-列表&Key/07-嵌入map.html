@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>07-嵌入map</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+        const uls = (
+          <ul>
+            {[1, 2, 3].map((v) => (
+              <li key={v}>{v}</li>
+            ))}
+          </ul>
+        );
+        ReactDOM.render(uls, app);
+      };
+    </script>
+  </body>
+</html>

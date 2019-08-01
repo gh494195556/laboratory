@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>16-dropdown</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      div.dropdown {
+        position: relative;
+        display: inline;
+        padding: 3px;
+        border: 1px solid #aaa;
+      }
+      div.dropdown > input[type='text'] {
+        border-width: 0;
+        outline: none;
+      }
+      div > button {
+        position: absolute;
+        height: 100%;
+        width: 20px;
+        top: 0px;
+        right: 4px;
+        padding: 0;
+      }
+      div.dropdown > div.droppanel {
+        display: none;
+        margin-top: 5px;
+        position: absolute;
+        min-width: 200px;
+        min-height: 100px;
+        z-index: 1;
+        outline: none;
+        overflow-y: scroll;
+        border: 1px solid #aaa;
+        background-color: #fafafa;
+      }
+      div.droppanel > ul {
+        padding: 0;
+      }
+      div.droppanel > ul > li {
+        list-style: none;
+        cursor: pointer;
+        border-bottom: 1px dashed #aaa;
+      }
+      div.droppanel > ul > li:hover {
+        background-color: crimson;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>dropdown</h1>
+    <div class="dropdown">
+      <input type="text" /><button>拉</button>
+      <div class="droppanel" tabindex="1">
+        <ul>
+          <li value="BJ">北京</li>
+          <li value="SH">上海</li>
+          <li value="GZ">广州</li>
+          <li value="SZ">深圳</li>
+        </ul>
+      </div>
+    </div>
+    <p>the panel will cover this paragraph when it's showing</p>
+    <script>
+      window.onload = (e) => {
+        const btn = document.getElementsByTagName('button')[0];
+        const dp = document.querySelector('div.droppanel');
+        const ul = document.querySelector('div.droppanel>ul');
+        const txt = document.querySelector('div.dropdown>input[type=text]');
+        ul.addEventListener('click', (e) => {
+          const node = e.target;
+          if (node.nodeName === 'LI') {
+            txt.value = node.attributes.value.value;
+            dp.blur();
+          }
+        });
+        dp.addEventListener('blur', (e) => {
+          if (dp.style.display === 'block') {
+            dp.style.display = 'none';
+          }
+        });
+        btn.addEventListener('click', (e) => {
+          if (dp.style.display === '' || dp.style.display === 'none') {
+            dp.style.display = 'block';
+            dp.focus();
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

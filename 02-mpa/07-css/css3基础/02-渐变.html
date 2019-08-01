@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>02-渐变</title>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        margin: 10px;
+      }
+      [float] {
+        float: left;
+      }
+      [rtl] {
+        background: linear-gradient(to left, crimson, dodgerblue);
+      }
+      [ltr] {
+        background: linear-gradient(to right, crimson, dodgerblue);
+      }
+      [tltbr] {
+        background: linear-gradient(to bottom right, crimson, dodgerblue);
+      }
+      [deg] {
+        background: linear-gradient(20deg, crimson, dodgerblue);
+      }
+      [mutcolor] {
+        background: linear-gradient(to right, #fff, #333, #fff);
+      }
+      [normal] {
+        background: radial-gradient(red, yellow, #222);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>线性渐变</h1>
+    <div rtl float></div>
+    <div ltr float></div>
+    <div tltbr float></div>
+    <div deg float></div>
+    <div mutcolor float></div>
+    <h1>径向渐变</h1>
+    <div normal></div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>01-边框</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      div {
+        float: left;
+        width: 200px;
+        height: 200px;
+        margin: 15px;
+      }
+      div.border {
+        border: 1px solid #ddd;
+      }
+      div.radius {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+      div.shadow {
+        box-shadow: 0 0 5px -1px #555;
+      }
+      div.card {
+        position: relative;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        box-shadow: 0 0 5px -1px #555;
+      }
+      div > button {
+        right: 15px;
+        position: absolute;
+        border: 1px solid #c8c8c8;
+        background-color: #fafafa;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+      div > button:active {
+        color: #fff;
+        border-color: crimson;
+        background-color: crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border">边框</div>
+    <div class="radius">圆角</div>
+    <div class="shadow">阴影</div>
+    <div class="card">
+      <h1>卡片</h1>
+      <p>
+        这是一个卡片风格的 div.这是一个卡片风格的 div.这是一个卡片风格的 div.
+      </p>
+      <button>ok</button>
+    </div>
+  </body>
+</html>

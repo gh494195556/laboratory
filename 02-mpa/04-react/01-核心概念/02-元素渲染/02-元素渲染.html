@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>03-元素渲染</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      p {
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>元素渲染</h1>
+    <p>
+      JSX 在编译时会被 Babel 转译成 React.createElement()
+      调用，该函数会创建一个对象，这个对象被称为：“React 元素”。一个 React
+      元素描述了你希望在屏幕上看到的内容。React通过读取 React 元素，使用 React
+      DOM 同步 React 元素与 DOM 的状态。
+    </p>
+    <p>与浏览器 DOM 元素不同，React 元素的创建开销极小。</p>
+    <p>
+      <b>元素</b>与<b>组件</b>是不同的，元素是组成组件的基本单元。React
+      应用由一个或多个组件组成，每个组件由一个或多个 React 元素组成。
+    </p>
+    <h1>不可变元素</h1>
+    <p>
+      一般来说，每个 React 应用都需要一个挂载点，也就是所谓的
+      "根DOM节点"，ReactDOM.render() 函数最终会把 React 元素渲染到这个节点中。
+    </p>
+    <p>
+      但是 React 元素是不可变的，也就是说，当渲染过后，就无法在修改这个 React
+      元素了。如果想要更新 UI，需要创建一个新的 React 元素。
+    </p>
+    <p>
+      ReactDOM 在渲染一个 React 元素时会比较和之前的 React 元素的不同，并
+      <b>只是更新产生变化的位置</b> 。
+    </p>
+    <p>大多数 React 应用只调用一次 ReactDOM.render()函数。</p>
+
+    <div id="app"></div>
+    <script type="text/babel">
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+        function tick() {
+          const element = (
+            <div>
+              <h1>{new Date().toLocaleTimeString()}</h1>
+            </div>
+          );
+          ReactDOM.render(element, app);
+        }
+
+        setInterval(tick, 100);
+      };
+    </script>
+  </body>
+</html>

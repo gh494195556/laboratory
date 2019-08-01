@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>02-媒体查询显示不同图片</title>
+    <style>
+      * {
+        margin: 0;
+      }
+      html {
+        height: 100%;
+        width: 100%;
+      }
+      /* 768以上显示这个图片 */
+      body {
+        background-image: url('https://c-ssl.duitang.com/uploads/item/201901/21/20190121093506_jfRYz.thumb.700_0.jpeg');
+        height: 100%;
+        width: 100%;
+      }
+
+      div {
+        height: 80%;
+        width: 80%;
+        background-color: #fff;
+        position: absolute;
+        left: 10%;
+        top: 10%;
+      }
+
+      picture > img,
+      picture > source {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* 768px(包含)以上显示这个图片 */
+      @media only screen and (min-width: 768px) {
+        body {
+          background-image: url('https://c-ssl.duitang.com/uploads/item/201905/11/20190511143926_mnrjr.thumb.700_0.jpeg');
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <picture>
+        <source
+          srcset="https://b-ssl.duitang.com/uploads/item/201901/27/20190127035939_uHZyF.thumb.700_0.jpeg"
+          media="(max-width: 768px)"
+        />
+        <source
+          srcset="https://c-ssl.duitang.com/uploads/item/201906/24/20190624180157_lqckf.thumb.700_0.jpeg"
+          media="(max-width: 1024px)"
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201903/11/20190311005711_88JyF.thumb.700_0.jpeg"
+          alt="Flowers"
+        />
+      </picture>
+    </div>
+  </body>
+</html>

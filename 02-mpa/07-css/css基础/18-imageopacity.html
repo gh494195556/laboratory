@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>18-imageopacity</title>
+    <style>
+      div.imglist {
+        position: relative;
+        border: 1px solid #ddd;
+        height: 300px;
+        width: 100%;
+      }
+      div.imglist > div {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+      div.imglist > div > img {
+        width: 100px;
+        height: 100px;
+        opacity: 0.2;
+        transition: opacity 0.3s, width 0.3s, height 0.3s;
+      }
+      div.imglist > div > img.selected {
+        width: 280px;
+        height: 280px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>图片透明与选中效果</h1>
+    <div class="imglist">
+      <div>
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201907/04/20190704153800_ntaqi.thumb.700_0.jpeg"
+          alt=""
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201901/12/20190112232307_lefde.thumb.700_0.jpg"
+          alt=""
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201903/16/20190316225756_vZQCy.thumb.700_0.jpeg"
+          alt=""
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201905/17/20190517135819_islpr.thumb.700_0.png"
+          alt=""
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201905/17/20190517135819_csluk.thumb.700_0.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <script>
+      window.onload = (e) => {
+        const imgList = document.querySelector('div.imglist');
+        imgList.addEventListener('click', (e) => {
+          const target = e.target;
+          if (e.target.nodeName === 'IMG') {
+            const imgs = document.getElementsByTagName('img');
+            for (const iterator of imgs) {
+              if (iterator.className === 'selected') {
+                iterator.className = '';
+              }
+            }
+            e.target.className = 'selected';
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
