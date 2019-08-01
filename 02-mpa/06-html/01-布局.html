@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>01-布局</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        margin: 0;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      div.header {
+        color: #fff;
+        height: 60px;
+        background-color: #369;
+        box-shadow: 0 0 3 #999;
+      }
+      div.container {
+        width: 100%;
+        height: 300px;
+      }
+      div.sidebar {
+        float: left;
+        background-color: crimson;
+        width: 20%;
+        height: 100%;
+      }
+      div.view {
+        float: left;
+        width: 80%;
+        height: 100%;
+      }
+      div.footer {
+        font-size: 20px;
+        color: #fff;
+        height: 30px;
+        background-color: seagreen;
+      }
+      div.container2 {
+        width: 1024px;
+        margin: 0 auto;
+        height: 500px;
+      }
+      div.container2 > div.middle {
+        height: 200px;
+        margin: 30px 0;
+      }
+      .container2 > .middle > img {
+        height: 200px;
+        display: inline-block;
+      }
+      div.container2 > div.view2 {
+        padding: 15px;
+        border: 1px solid #ddd;
+      }
+      p {
+        text-indent: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>布局01</h1>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <ul>
+          <li>li1</li>
+          <li>li2</li>
+          <li>li3</li>
+          <li>li4</li>
+          <li>li5</li>
+        </ul>
+      </div>
+      <div class="view">
+        <h1>view</h1>
+      </div>
+    </div>
+
+    <div class="footer">
+      Made in china.
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="header">
+      <h1>布局2</h1>
+    </div>
+    <div class="container2">
+      <div class="middle">
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201905/01/20190501183537_dtrmt.thumb.700_0.jpg"
+        />
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/201905/01/20190501183538_jkfye.thumb.700_0.jpg"
+        />
+      </div>
+      <div class="view2">
+        <h3>三月，醉一场青春的流年</h3>
+        <p>
+          三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。
+        </p>
+        <p>
+          青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。
+        </p>
+        <p>
+          三月的鲜花，一树树，一束束，一簇簇，而青春，就是像三月的鲜花一样美丽迷人，生机盎然，姹紫嫣红，生机勃勃。三月，是青春里最美最温暖的风景。三月的美，就像青春的美，充满活力，充满生机，充满昂扬的斗志。三月的美，就像青春的花季，在那里我们可以感受青春的跳动与感动，感受青春的曼妙与奇妙；感受青春的悸动与心跳。
+        </p>
+      </div>
+      <div class="footer">
+        Made in china.
+      </div>
+    </div>
+  </body>
+</html>

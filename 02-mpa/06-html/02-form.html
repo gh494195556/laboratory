@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>02-form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: sans-serif;
+      }
+      form {
+        width: 768px;
+        margin: 15px auto;
+        border: 1px solid #dcdcdc;
+        padding: 10px;
+      }
+      form input {
+        margin-right: 10px;
+      }
+      div.row {
+        line-height: 30px;
+      }
+      .row > label.label {
+        display: inline-block;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="input" action="03-action.html" method="GET">
+      <h1>用户注册</h1>
+      <div class="row">
+        <label for="userName" class="label">用户名</label>
+        <input type="text" name="userName" id="userName" />
+      </div>
+      <div class="row">
+        <label for="userName" class="label">性别</label>
+        <label><input type="radio" name="gender" value="1" />男</label>
+        <label><input type="radio" name="gender" value="2" />女</label>
+        <label><input type="radio" name="gender" value="3" />保密</label>
+      </div>
+      <div class="row">
+        <label for="city" class="label">城市</label>
+        <select name="city" id="city">
+          <option value="BJ">北京</option>
+          <option value="SH">上海</option>
+          <option value="GZ">广州</option>
+          <option value="SZ">深圳</option>
+        </select>
+      </div>
+      <div class="row" id="checkboxContainer">
+        <label for="skill" class="label">技能</label>
+        <label><input type="checkbox" name="skill" value="c" />c</label>
+        <label><input type="checkbox" name="skill" value="c++" />c++</label>
+        <label><input type="checkbox" name="skill" value="c#" />c#</label>
+        <label
+          ><input
+            type="checkbox"
+            name="skill"
+            value="javascript"
+          />javascript</label
+        >
+        <label
+          ><input type="checkbox" name="skill" value="golang" />golang</label
+        >
+      </div>
+      <div class="row">
+        <input type="submit" value="提交" />
+        <input type="reset" value="重置" />
+      </div>
+    </form>
+
+    <script>
+      window.onload = (e) => {
+        const proxy = document.querySelector('#checkboxContainer');
+        let skills = [];
+        const form = document.querySelector('form');
+        form.onsubmit = () => {
+          document.querySelector('input[name=skill]').value = skills;
+        };
+        proxy.addEventListener('change', (e) => {
+          const type = e.target.type;
+          const tag = e.target.tagName;
+          if (type === 'checkbox' && tag === 'INPUT') {
+            if (e.target.checked && !skills.includes(e.target.value)) {
+              skills = skills.concat(...[e.target.value]);
+            } else if (!e.target.checked && skills.includes(e.target.value)) {
+              skills = skills.filter((s) => s !== e.target.value);
+            }
+          }
+        });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>19-img-navsprites</title>
+    <style>
+      div.imglist {
+        width: 700px;
+        height: 400px;
+        border: 1px solid #ddd;
+      }
+      div.imglist > div {
+        display: inline-block;
+        border: 1px solid #eee;
+      }
+      div.imglist > div.sprites1 {
+        width: 120px;
+        height: 150px;
+        background: url('./assets/img_navsprites.jpg') 0 -150px;
+      }
+      div.imglist > div.sprites2 {
+        width: 120px;
+        height: 150px;
+        background: url('./assets/img_navsprites.jpg') -85px 0;
+      }
+      div.imglist > div.sprites3 {
+        width: 75px;
+        height: 150px;
+        background: url('./assets/img_navsprites.jpg') -220px 0;
+      }
+      div.imglist > div.sprites4 {
+        width: 100px;
+        height: 150px;
+        background: url('./assets/img_navsprites.jpg') -380px -140px;
+      }
+      div.imglist > div.sprites5 {
+        width: 100px;
+        height: 150px;
+        background: url('./assets/img_navsprites.jpg') -500px -140px;
+      }
+      div.imglist > div.sprites6 {
+        width: 70px;
+        height: 125px;
+        background: url('./assets/img_navsprites.jpg') -380px -300px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>精灵图使用</h1>
+    <div class="imglist">
+      <div class="sprites1"></div>
+      <div class="sprites2"></div>
+      <div class="sprites3"></div>
+      <div class="sprites4"></div>
+      <div class="sprites5"></div>
+      <div class="sprites6"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>弹性盒子</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      code {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #2c2c2c;
+        color: #fff;
+        padding: 5px;
+        font-weight: 700;
+        border-radius: 3px;
+      }
+      div::first-letter {
+        float: left;
+        font-size: 20px;
+        font-weight: 700;
+      }
+      div.flex-container {
+        display: flex;
+        border: 1px solid #c8c8c8;
+        border-radius: 3px;
+        background-color: #fafafa;
+        height: 100px;
+        padding: 15px;
+      }
+      div.flex-container > div.flex-item {
+        text-indent: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>弹性盒子</h1>
+    <p>弹性盒子是 css3 的一种新布局模式。</p>
+    <p>弹性盒子由：<b>弹性容器</b>和<b>弹性子元素</b>组成</p>
+    <p>
+      弹性容器<code>display</code> =
+      <code>flex/inline-flex</code
+      >，弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+    </p>
+
+    <p>示例：</p>
+    <p>div 现在成为了一行显示</p>
+    <div class="flex-container">
+      <div class="flex-item">
+        1.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        2.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        3.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        4.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        5.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+    </div>
+    <p>修改 direction: rtl 改变排列顺序(rtl: right to left)</p>
+    <div class="flex-container" style="direction: rtl">
+      <div class="flex-item">
+        1.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        2.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        3.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        4.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+      <div class="flex-item">
+        5.
+        弹性容器包含一个或者多个弹性子元素，默认情况下弹性子元素在一行内显示。
+      </div>
+    </div>
+  </body>
+</html>

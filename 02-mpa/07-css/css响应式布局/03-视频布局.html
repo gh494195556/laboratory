@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>03-视频布局</title>
+    <style>
+      video {
+        /* max-width: 100% 时，视频资源不会超过自己的最大值 */
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <video width="400" controls>
+      <source
+        src="https://www.w3cschool.cn/statics/demosource/mov_bbb.mp4"
+        type="video/mp4"
+      />
+      <source src="" type="video/mp4" />
+    </video>
+  </body>
+</html>

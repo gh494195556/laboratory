@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>13-组合选择符</title>
+    <style>
+      span ~ p {
+        background-color: crimson;
+      }
+      span + em {
+        background-color: dodgerblue;
+      }
+      div p {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      div > p {
+        color: seagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>组合选择符</h1>
+    <ul>
+      <li>后代选择器： div p</li>
+      <li>子元素选择器： div>p</li>
+      <li>相邻兄弟选择器： div+a</li>
+      <li>普通兄弟选择器： div~p</li>
+    </ul>
+    <span>span</span><em>span + em</em>
+    <p>span ~ p</p>
+    <div>
+      <p>div>p</p>
+      <span>
+        <p>div>div>p</p>
+      </span>
+    </div>
+  </body>
+</html>
