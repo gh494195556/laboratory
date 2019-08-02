@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>独立型自定义元素</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <b-dialog
+      avatar="https://b-ssl.duitang.com/uploads/item/201905/02/20190502002032_ciL4z.thumb.700_0.jpeg"
+    ></b-dialog>
+    <b-dialog
+      avatar="https://c-ssl.duitang.com/uploads/item/201907/29/20190729092514_urehw.thumb.700_0.jpg"
+    ></b-dialog>
+    <b-dialog
+      avatar="https://c-ssl.duitang.com/uploads/item/201905/31/20190531165854_xgxij.thumb.700_0.jpg"
+    ></b-dialog>
+    <script>
+      class Dialog extends HTMLElement {
+        constructor() {
+          super();
+
+          // 创建 shadow root
+          let shadow = this.attachShadow({ mode: 'open' });
+
+          // 构建 shadow dom
+          // 编写 dialog 容器
+          let wrapper = document.createElement('div');
+          wrapper.setAttribute('class', 'wrapper');
+
+          // 编写 dialog title 部分
+          let title = document.createElement('div');
+          title.setAttribute('class', 'title');
+
+          // 按钮
+          let btn = document.createElement('button');
+          btn.setAttribute('class', 'zoom');
+          btn.textContent = '缩放';
+          btn.addEventListener('click', (e) => {
+            if (wrapper.style.width === '300px') {
+              wrapper.style.width = '200px';
+              wrapper.style.height = '200px';
+            } else {
+              wrapper.style.width = '300px';
+              wrapper.style.height = '300px';
+            }
+          });
+
+          let avatar = '';
+          if (this.hasAttribute('avatar')) {
+            avatar = this.getAttribute('avatar');
+          }
+          const img = document.createElement('img');
+          img.setAttribute('src', avatar);
+          img.setAttribute('alt', 'no avatar');
+          img.setAttribute('class', 'avatar');
+
+          // 编写 style
+          const style = document.createElement('style');
+          style.textContent = `
+            div.wrapper {
+              float: left;
+              margin: 15px;
+              height: 200px;
+              position: relative;
+              width: 200px;
+              background-color: #f4f4f4;
+              border-radius: 5px 5px 0 0;
+              overflow: auto;
+              box-shadow: 0 0 3px #2c2c2c;
+              transition: all 300ms ease-out;
+            }
+
+            div.wrapper>div.title {
+              position: absolute;
+              height: 35px;
+              width: 100%;
+              background-color: #369;
+            }
+
+            div.wrapper>button.zoom {
+              position: absolute;
+              top: 50px;
+              left: 15px;
+            }
+
+            div.wrapper>img.avatar {
+              position: absolute;
+              top: 50px;
+              right: 10px;
+              width: calc(100% - 90px);
+              border-radius: 50%;
+            }
+          `;
+
+          wrapper.appendChild(title);
+          wrapper.appendChild(img);
+          wrapper.appendChild(btn);
+          shadow.appendChild(wrapper);
+          shadow.appendChild(style);
+        }
+      }
+
+      customElements.define('b-dialog', Dialog);
+    </script>
+  </body>
+</html>

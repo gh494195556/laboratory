@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- 核心库 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <!-- DOM相关 -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <!-- 支持JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>05-state与生命周期</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>state与生命周期</h1>
+    <b>state与props</b>
+    <p>
+      如果说 props 是外界传递给组件的信息的话，那么 state
+      就是组件自身所携带的一些信息。state 是私有的，它完全受控于当前组件。
+    </p>
+    <h2>class 组件</h2>
+    <p>
+      包含 state 的组件都是 class 组件（个人结论，也许不对）， state 一般在
+      constructor 中定义。
+    </p>
+    <p>class 组件继承自 React.Component 类</p>
+    <p>下面时一个 class component：</p>
+    <div id="app"></div>
+    <h2>state 注意事项</h2>
+    <p>1. 不要直接修改 state，应该使用 setState()</p>
+    <p></p>
+      2. 在 setState() 需要用到 props 或者其他 state 时，应采用函数的方式赋值
+      setState((state, props)=>{ // TODO...})
+    </p>
+    <p>
+      3. state 更新会合并，例如 state 包含两个字段：1. posts[], 2.
+      comments[]。那么当 setState({comments}) 时，posts 会被保留，comments
+      会被覆盖
+    </p>
+    <p>
+      4. 单项数据流（任何 state
+      最多只能影响他的"下游"组件，而无法影响他的上游组件）。
+    </p>
+    <script type="text/babel">
+      //
+      window.onload = (e) => {
+        const app = document.querySelector('#app');
+
+        // 时钟组件
+        class Clock extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              date: new Date()
+            };
+          }
+
+          // 当 Clock 组件被渲染到 DOM 中时，执行 did mount 生命周期方法
+          componentDidMount() {
+            this.timerID = setInterval(() => this.tick(), 1000);
+          }
+
+          // 当 Clock 组件从 DOM 中被移除时，执行 will unmount 生命周期方法
+          componentWillUnmount() {
+            clearInterval(this.timerID);
+          }
+
+          tick() {
+            this.setState({
+              date: new Date()
+            });
+          }
+
+          render() {
+            return (
+              <div>
+                <h1>Clock</h1>
+                <h2>{this.state.date.toLocaleTimeString()}.</h2>
+              </div>
+            );
+          }
+        }
+
+        ReactDOM.render(<Clock />, app);
+      };
+    </script>
+  </body>
+</html>
