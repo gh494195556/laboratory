@@ -29,7 +29,7 @@
 >    1. express
 >    2. koa
 > 7. 通用技能
->    1. lodash
+>    1. web component
 >    2. rxjs
 >    3. 《学习 JavaScript 数据结构与算法》
 >    4. 《算法图解》
@@ -127,7 +127,9 @@
 
 ## 7. 通用技能
 
-### a. lodash
+### a. web component
+
+1. _01-web component 入门_ Friday, August 02 2019 `[done]`
 
 ### b. rxjs
 
