@@ -26,7 +26,7 @@ custom element 有 2 种：
 
 ## Autonomous custom elements
 
-[autonomous-custom-element.html]()
+[autonomous-custom-element.html](https://github.com/bey6/laboratory/blob/master/07-general/01-web%20component/02-custom%20element/autonomous-custom-element.html)
 
 案例实现了一个 <b-dialog> custom element，并且通过 attribute 接收一个外部参数。
 
