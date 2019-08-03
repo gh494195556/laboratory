@@ -26,10 +26,20 @@ custom element 有 2 种：
 
 ## Autonomous custom elements
 
-[autonomous-custom-element.html](https://github.com/bey6/laboratory/blob/master/07-general/01-web%20component/02-custom%20element/autonomous-custom-element.html)
+[autonomous-custom-element.html](autonomous-custom-element.html)
 
 案例实现了一个 <b-dialog> custom element，并且通过 attribute 接收一个外部参数。
 
 ![b-dialog.png](b-dialog.png)
 
 ## Customized built-in elements
+
+自定义内置元素与独立元素的区别：
+
+1. 继承：自定义内置元素继承明确的元素，而不是 HTMLElement。
+2. 定义：自定义内置元素 customElements.define() 中启用第三个参数，对应上继承的元素
+3. 使用：通过在继承元素上添加 is="自定义元素名" 使用
+
+![b-tree.png](b-tree.png)
+
+[b-tree 代码](customized-built-in-elements.html)
