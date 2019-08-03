@@ -7,10 +7,9 @@
 >    2. gulp
 >    3. webpack
 > 2. 多页应用
->    1. html+css+js
->    2. jquery
->    3. vue
->    4. react
+>    1. js
+>    2. vue
+>    3. react
 > 3. 单页应用
 >    1. vue
 >    2. react
@@ -18,19 +17,12 @@
 > 4. 混合应用
 >    1. weex
 >    2. react native
-> 5. ECMAScript
->    1. es5
->    2. es2015
->    3. es2016
->    4. es2017
->    5. es2018
->    6. es2019
-> 6. Node.Js
+> 5. Node.Js
 >    1. express
 >    2. koa
-> 7. 通用技能
->    1. web component
->    2. rxjs
+> 6. 通用技能
+>    1. html-css
+>    2. es6+
 >    3. 《学习 JavaScript 数据结构与算法》
 >    4. 《算法图解》
 >    5. 《现代前端技术解析》
@@ -55,13 +47,11 @@
 
 ## 2. 多页应用(Multi-Page Application, MPA)
 
-### a. html+css+js
+### a. js
 
-### b. jquery
+### b. vue
 
-### c. vue
-
-### d. react
+### c. react
 
 1. _00-react-cdn.md_ Tuesday, July 24 2019 `[done]`
 2. _01-react-helloworld.html_ Tuesday, July 24 2019 `[done]`
@@ -105,39 +95,67 @@
 
 ### b. react native
 
-## 5. ESMAScript
-
-### a. es5
-
-### b. es2015
-
-### c. es2016
-
-### d. es2017
-
-### e. es2018
-
-### f. es2019
-
-## 6. Node.Js
+## 5. Node.Js
 
 ### a. 《深入浅出 Nodejs》
+
+1. _Node 简介_
+2. _模块机制_
+3. _异步 I/O_
+4. _异步编程_
+5. _内存控制_
+6. _理解 Buffer_
+7. _网络编程_
+8. _构建 Web 应用_
+9. _玩转进程_
+10. _测试_
+11. _产品化_
 
 ### b. express
 
 ### c. koa
 
-## 7. 通用技能
+## 6. 通用技能
 
-### a. web component
+### a. html-css
 
 1. _01-web component 入门_ Friday, August 02 2019 `[done]`
 
-### b. rxjs
+### b. es6+
+
+1. _es5_
+2. _es6+_
+3. _lodash_
+4. _rxjs_
 
 ### c. 《学习 JavaScript 数据结构与算法》
 
+1. _JavaScript 简介_
+2. _数组_
+3. _栈_
+4. _队列_
+5. _链表_
+6. _集合_
+7. _字典和散列表_
+8. _树_
+9. _图_
+10. _排序和搜索算法_
+11. _算法模式_
+12. _算法复杂度_
+
 ### d. 《算法图解》
+
+1. _算法简介_
+2. _排序算法_
+3. _递归_
+4. _快速排序_
+5. _散列表_
+6. _广度优先搜索_
+7. _狄克斯特拉算法_
+8. _贪婪算法_
+9. _动态规划_
+10. _K 最近邻算法_
+11. _next_
 
 ### e. 《现代前端技术解析》
 
