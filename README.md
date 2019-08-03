@@ -94,6 +94,8 @@
 
 ### c. angular
 
+1. _oauth2-oidc-base_ Saturday, August 3 2019 `[done]`
+
 ## 4. 混合应用(Hybrid Application)
 
 1. _01-什么是 hybrid app_ Thursday, July 18 2019
