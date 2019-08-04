@@ -9,35 +9,6 @@
         font-family: sans-serif;
         list-style-type: none;
       }
-
-      li::before {
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        margin-right: 0.25rem;
-        content: '';
-      }
-
-      .open::before,
-      .closed::before {
-        background-size: 1rem 1rem;
-        position: relative;
-        top: 0.25rem;
-        opacity: 0.3;
-      }
-
-      .open::before {
-        background-image: url(img/down.png);
-      }
-
-      .closed::before {
-        background-image: url(img/right.png);
-      }
-
-      .closed .closed::before,
-      .closed .open::before {
-        display: none;
-      }
     </style>
     <title>b-tree</title>
   </head>
@@ -88,34 +59,31 @@
 
           window.onload = () => {
             const uls = Array.from(document.querySelectorAll(':root ul'));
-            const ulsnotroot = Array.from(document.querySelectorAll('ul'));
             const lis = Array.from(document.querySelectorAll(':root li'));
-
-            console.log(uls);
-            console.log(ulsnotroot);
 
             // 从第二个开始，全部隐藏
             uls.slice(1).forEach((ul) => {
-              // console.log(ul.innerHTML);
               ul.style.display = 'none';
             });
 
-            //
+            // 把所有 <li> 中的文本替换为 <span>
             lis.forEach((li) => {
               const childText = li.childNodes[0];
               const newSpan = document.createElement('span');
-
               newSpan.textContent = childText.textContent;
               childText.parentNode.insertBefore(newSpan, childText);
               childText.parentNode.removeChild(childText);
             });
 
+            // 所有 <span>
             const spans = Array.from(document.querySelectorAll(':root span'));
 
+            // 将存在兄弟元素的 <span> 作对应的操作（正常情况下兄弟元素是 <ul>）
             spans.forEach((span) => {
-              // 返回 span 的下一个兄弟节点，如果已经是最后一个，则返回 null
+              // 返回 <span> 的下一个兄弟节点，如果已经是最后一个，则返回 null
               if (span.nextElementSibling) {
                 span.style.cursor = 'pointer';
+                span.style.textDecoration = 'underline';
                 span.parentNode.setAttribute('class', 'closed');
                 span.onclick = showul;
               }
@@ -123,7 +91,6 @@
 
             function showul(e) {
               const nextul = e.target.nextElementSibling;
-
               if (nextul.style.display == 'block') {
                 nextul.style.display = 'none';
                 nextul.parentNode.setAttribute('class', 'closed');
