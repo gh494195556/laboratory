@@ -49,4 +49,4 @@ let shadowDOM = customElement.shadowRoot;
 
 ## 案例
 
-前面已经使用过 Shadow DOM 了，具体可 [查看 Demo]()。
+前面已经使用过 Shadow DOM 了，具体可 [查看 Demo](https://github.com/bey6/laboratory/blob/master/06-general/01-html-css/03-web-component/02-custom-element/autonomous-custom-element.html)。
