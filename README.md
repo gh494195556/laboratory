@@ -119,10 +119,16 @@
 
 ### a. html-css
 
+#### 01-html
+
+#### 02-css
+
+#### 03-web-component
+
 1. _01-web component 入门_ Friday, August 02 2019 `[done]`
-2. _02-custom element_
-3. _03-shadow DOM_
-4. _04-templates&slots_
+2. _02-custom element_ Sunday, August 04 2019 `[done]`
+3. _03-shadow DOM_ Sunday, August 04 2019 `[done]`
+4. _04-templates&slots_ Sunday, August 04 2019 `[done]`
 
 ### b. es6+
 
