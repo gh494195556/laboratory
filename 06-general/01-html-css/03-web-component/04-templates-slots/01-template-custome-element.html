@@ -20,19 +20,27 @@
   <body>
     <template id="dialog">
       <style>
+        .dialog {
+          border: 1px dashed #c8c8c8;
+          float: left;
+          margin: 10px;
+        }
         .dialog-content {
           height: 200px;
           width: 200px;
           background-color: #369;
         }
       </style>
-      <p>dialog custom element.</p>
-      <div class="dialog-content">
-        ...
+      <div class="dialog">
+        <p>dialog custom element.</p>
+        <div class="dialog-content">
+          ...
+        </div>
       </div>
     </template>
-    <button>添加一个Dialog自定义元素</button>
-
+    <div>
+      <button>添加一个Dialog自定义元素</button>
+    </div>
     <script>
       window.onload = () => {
         const tmp = document.querySelector('#dialog').content;
