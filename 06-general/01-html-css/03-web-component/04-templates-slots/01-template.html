@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>template</title>
+  </head>
+  <body>
+    <button>添加 template 到 body</button>
+    <template id="hello-world">
+      <h1>hello world</h1>
+      <p>we need to save the world!</p>
+    </template>
+    <script>
+      window.onload = () => {
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', (e) => {
+          const tmp = document.querySelector('#hello-world');
+          let tmpContent = tmp.content;
+          document.body.appendChild(tmpContent);
+          document.body.appendChild();
+        });
+      };
+    </script>
+  </body>
+</html>

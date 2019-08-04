@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>template-custome-element</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      /* 在这里是无法设置 dialog 中的样式的 */
+      .dialog-content {
+        height: 200px;
+        width: 200px;
+        background-color: #369;
+      }
+    </style>
+  </head>
+  <body>
+    <template id="dialog">
+      <style>
+        .dialog-content {
+          height: 200px;
+          width: 200px;
+          background-color: #369;
+        }
+      </style>
+      <p>dialog custom element.</p>
+      <div class="dialog-content">
+        ...
+      </div>
+    </template>
+    <button>添加一个Dialog自定义元素</button>
+
+    <script>
+      window.onload = () => {
+        const tmp = document.querySelector('#dialog').content;
+
+        class Dialog extends HTMLElement {
+          constructor() {
+            super();
+            const shadowRoot = this.attachShadow({ mode: 'open' });
+            shadowRoot.appendChild(tmp.cloneNode(true));
+          }
+        }
+
+        customElements.define('b-dialog', Dialog);
+
+        document.querySelector('button').addEventListener('click', (e) => {
+          const dialog = document.createElement('b-dialog');
+          document.body.appendChild(dialog);
+        });
+      };
+    </script>
+  </body>
+</html>

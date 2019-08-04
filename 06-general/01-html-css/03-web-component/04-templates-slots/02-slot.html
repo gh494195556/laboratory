@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>slot</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      input[type=text] {
+        width: calc(100% - 200px);
+      }
+      img {
+        width: 100%;
+      }
+      ul {
+        list-style: none;
+        padding: 5px;
+      }
+      span.header {
+        font-size: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" name="url" id="url" placeholder="粘贴一个头像的网络路径进来" value="https://c-ssl.duitang.com/uploads/item/201907/30/20190730220621_Z8SkX.thumb.700_0.jpeg"/>
+      <button>add</button>
+    </div>
+    <template id="avatar">
+      <style>
+        div.dialog {
+          height: 200px;
+          width: 200px;
+          margin: 15px;
+          border: 1px solid #c8c8c8;
+          float: left;
+        }
+        .header {
+          height: 51px;
+          width: 100%;
+          background-color: #369;
+        }
+        .left {
+          float: left;
+          width: 50px;
+          height: 149px;
+          border-right: 1px dashed #c8c8c8;
+        }
+        .right {
+          float: left;
+          width: 149px;
+        }
+      </style>
+      <div class="dialog">
+        <div class="header">
+          <slot name="header">header</slot>
+        </div>
+        <div class="left">
+          <slot name="left">left</slot>
+        </div>
+        <div class="right">
+          <slot name="right">right</slot>
+        </div>
+      </div>
+    </template>
+    <b-avatar>
+      <span slot="header">preview</span>
+      <ul slot="left">
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+      </ul>
+      <img
+        src="https://c-ssl.duitang.com/uploads/item/201901/27/20190127122259_sdimt.thumb.700_0.jpeg"
+        alt="not found"
+        slot="right"
+    /></b-avatar>
+    <b-avatar>
+      <span slot="header" class="header">我是头部</span>
+      <img slot="left" src="https://b-ssl.duitang.com/uploads/item/201905/30/20190530233646_mUAK3.thumb.700_0.jpeg"></img>
+      <img slot="left" src="https://b-ssl.duitang.com/uploads/item/201905/30/20190530233646_mUAK3.thumb.700_0.jpeg"></img>
+      <span slot="left">左边左边</span>
+      <ul slot="right">
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+      </ul>
+    </b-avatar>
+    <script>
+      window.onload = () => {
+        class Avatar extends HTMLElement {
+          constructor() {
+            super();
+
+            const shadowDOM = this.attachShadow({ mode: 'open' });
+            shadowDOM.appendChild(
+              document.querySelector('#avatar').content.cloneNode(true)
+            );
+          }
+        }
+        customElements.define('b-avatar', Avatar);
+
+        const url = document.querySelector('input[type=text]');
+        document.querySelector('button').addEventListener('click', (e) => {
+          const newAvatar = document.createElement('b-avatar');
+          const avatar = document.createElement('img');
+          avatar.setAttribute('src', url.value);
+          avatar.setAttribute('slot', 'right');
+          newAvatar.appendChild(avatar);
+          document.body.appendChild(newAvatar);
+        });
+      };
+    </script>
+  </body>
+</html>
