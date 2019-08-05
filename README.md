@@ -21,7 +21,7 @@
 >    1. express
 >    2. koa
 > 6. 通用技能
->    1. html-css
+>    1. html+css
 >    2. es6+
 >    3. 《学习 JavaScript 数据结构与算法》
 >    4. 《算法图解》
@@ -117,7 +117,7 @@
 
 ## 6. 通用技能
 
-### a. html-css
+### a. html+css
 
 #### 01-html
 
