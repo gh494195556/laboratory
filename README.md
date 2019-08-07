@@ -41,9 +41,17 @@
 
 ### c. webpack
 
+#### 概念
+
 1. _01-webpack 简介.md_ Monday, July 15 2019 `[done]`
 2. _02-入口起点.md_ Tuesday, July 30 2019 `[done]`
 3. _03-输出.md_ Tuesday, July 30 2019 `[done]`
+
+#### 指南
+
+1. _01-安装与起步_ Wednesday, August 07 2019 `[done]`
+2. _02-管理资源_ Wednesday, August 07 2019 `[done]`
+3. _03-管理输出_ Wednesday, August 07 2019
 
 ## 2. 多页应用(Multi-Page Application, MPA)
 
